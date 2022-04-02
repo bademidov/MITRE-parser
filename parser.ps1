@@ -2,7 +2,7 @@
 $detection_results_xlsx = './2021_Results_Detection.xlsx'
 $protection_results_xlsx = './2021_Results_Protection.xlsx'
 #$conf_changes_xlsx = './2021_Config_Changes_Summary.xlsx'
-$files = Get-ChildItem -Filter "*.json"
+$files = Get-ChildItem -Filter "./JSON/*.json"
 $summary_results = @()
 $summary_results_protection = @()
 $conf_changes_summary =@()
@@ -18,7 +18,7 @@ foreach ($file in $files) {
     $technique_discount = 0
     $config_changes1 = 0
     $config_changes2 = 0
-    $json = Get-Content $file -Raw | ConvertFrom-Json
+    $json = Get-Content $file.FullName -Raw | ConvertFrom-Json
     $vendor_name = $file.name.split("_")[0]
     Write-Host " "
     Write-Host " "
@@ -361,7 +361,7 @@ foreach ($file in $files) {
 }
 
 #$summary_results | Export-Csv 2021_results.csv -NoTypeInformation
-$summary_results | Export-Excel -Path $detection_results_xlsx -AutoSize -TableName Summary -WorksheetName "Summary"
+$summary_results | Export-Excel -Path $detection_results_xlsx -AutoSize -TableName Summary -WorksheetName "Summary" -FreezeTopRowFirstColumn -BoldTopRow
 $summary_results_protection | Export-Excel -Path $protection_results_xlsx -AutoSize -TableName Summary -WorksheetName "Summary"
 #$conf_changes_summary | Export-Excel -Path $conf_changes_xlsx -AutoSize -TableName Summary -WorksheetName "Summary"
 
