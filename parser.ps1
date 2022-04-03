@@ -18,17 +18,20 @@ param(
 #    [ValidateRange(1,50)]
 #    [int]$max,
 #    [switch]$run,
-    [switch]$changes
+    [switch]$changes,
+    [switch]$protection
 )
 
 $version = "0.2"
 $detection_results_xlsx = './2021_Results_Detection.xlsx'
+$detection_results_summary_xlsx = './2021_Detection_Summary.xlsx'
 $protection_results_xlsx = './2021_Results_Protection.xlsx'
 $files = Get-ChildItem -Filter "./JSON/*.json"
 $summary_results = @()
 $summary_results_protection = @()
 $conf_changes_summary =@()
 Remove-Item -Path $detection_results_xlsx -Force -ErrorAction SilentlyContinue
+Remove-Item -Path $detection_results_summary_xlsx -Force -ErrorAction SilentlyContinue
 Remove-Item -Path $protection_results_xlsx -Force -ErrorAction SilentlyContinue
 
 
@@ -91,9 +94,6 @@ foreach ($file in $files) {
     }
 
     $total_substeps = $substeps.count
-    write-host "Total Substeps: " $substeps.Count -ForegroundColor Cyan
-
-
 
     foreach ($substep in $substeps) {
         if ($null -eq $substep.Subtechnique.Subtechnique_ID) {
@@ -112,212 +112,203 @@ foreach ($file in $files) {
                 if ("Technique","General","Tactic" -contains $substep.Detections.Detection_Type) {
                     $analytic_steps +=1
                     $visibility_steps +=1
-                    #write-output "Substep $($substep.Substep)"
-                    #write-output $substep.Detections.Detection_Type | ft
-                    #write-host "ADDING ANALYTICS AND VISIBILITY" -ForegroundColor gREEN
                 } 
                 elseif ("Telemetry" -eq $substep.Detections.Detection_Type) {
                     $visibility_steps +=1
-                    #write-host "ADDING VISIBILITY" -ForegroundColor gREEN
-                    #write-output "Substep $($substep.Substep)"
-                    #write-output $substep.Detections.Detection_Type | ft
                 }
 
-                # Check for configuration changes
-                if ($substep.Detections.Modifiers.count -eq 1) {
-                    switch ($substep.Detections.Modifiers) {
-                        "Delayed" { 
-                            write-host " "
-                            write-host " "
-                            write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
-                            Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                            write-host "Delayed detection. Discounting Visibility." -ForegroundColor Yellow
-                            $visibility_discount +=1 
-                        }
-                        "Configuration Change (Data Sources)" { 
-                            write-host " " 
-                            write-host " "
-                            write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
-                            Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                            write-host "Configuration Change (Data Sources). Discounting Visibility" -ForegroundColor Yellow 
-                            $visibility_discount +=1 
-                        }
-                        "Configuration Change (Detection Logic)" {
-                            if ($substep.Detections.Detection_Type -eq "Technique") {
+                if ($changes) {
+                    # Check for configuration changes
+                    if ($substep.Detections.Modifiers.count -eq 1) {
+                        switch ($substep.Detections.Modifiers) {
+                            "Delayed" { 
                                 write-host " "
                                 write-host " "
                                 write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
                                 Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                                write-host "Configuration Change (Detection Logic) found. Discounting Analytic Coverage" -ForegroundColor Yellow
-                                $analytic_discount +=1
-                            } elseif ($substep.Detections.Detection_Type -eq "Telemetry") {
+                                write-host "Delayed detection. Discounting Visibility." -ForegroundColor Yellow
+                                $visibility_discount +=1 
+                            }
+                            "Configuration Change (Data Sources)" { 
+                                write-host " " 
+                                write-host " "
+                                write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
+                                Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+                                write-host "Configuration Change (Data Sources). Discounting Visibility" -ForegroundColor Yellow 
+                                $visibility_discount +=1 
+                            }
+                            "Configuration Change (Detection Logic)" {
+                                if ($substep.Detections.Detection_Type -eq "Technique") {
+                                    write-host " "
+                                    write-host " "
+                                    write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
+                                    Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+                                    write-host "Configuration Change (Detection Logic) found. Discounting Analytic Coverage" -ForegroundColor Yellow
+                                    $analytic_discount +=1
+                                } elseif ($substep.Detections.Detection_Type -eq "Telemetry") {
+                                    write-host " "
+                                    write-host " "
+                                    write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
+                                    Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+                                    write-host "Configuration Change (Detection Logic) found. Discounting Visibility" -ForegroundColor Yellow
+                                    $visibility_discount +=1
+                                }
+                            }
+                            "Configuration Change (UX)" { 
                                 write-host " "
                                 write-host " "
                                 write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
                                 Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                                write-host "Configuration Change (Detection Logic) found. Discounting Visibility" -ForegroundColor Yellow
+                                write-host "Configuration Change (UX). Discounting Visibility" -ForegroundColor Yellow
                                 $visibility_discount +=1
                             }
-                        }
-                        "Configuration Change (UX)" { 
-                            write-host " "
-                            write-host " "
-                            write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
-                            Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                            write-host "Configuration Change (UX). Discounting Visibility" -ForegroundColor Yellow
-                            $visibility_discount +=1
-                        }
-                        "Configuration Change" {
-                            if ($substep.Detections.Detection_Type -eq "Technique") {
+                            "Configuration Change" {
+                                if ($substep.Detections.Detection_Type -eq "Technique") {
+                                    write-host " "
+                                    write-host " "
+                                    write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan 
+                                    Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+                                    write-host "Configuration Change found. Discounting Analytic Coverage" -ForegroundColor Yellow
+                                    $analytic_discount +=1
+                                } elseif ($substep.Detections.Detection_Type -eq "Telemetry") {
+                                    write-host " "
+                                    write-host " "
+                                    write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan 
+                                    Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+                                    write-host "Configuration Change found. Discounting Visibility" -ForegroundColor Yellow
+                                    $visibility_discount +=1
+                                }
+                            }
+                            "N/A" { 
                                 write-host " "
                                 write-host " "
-                                write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan 
+                                write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
+                                write-host "Detection: N/A" }
+                            Default {}
+                        }
+                    }
+                    elseif ($substep.Detections.Modifiers.count -gt 1){
+                        if ("Technique","General","Tactic" -contains $substep.Detections.Detection_Type) {
+                            if ($substep.Detections.Modifiers -contains "Configuration Change (Data Sources)") {
+                                write-host " "
+                                write-host " "
+                                write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
                                 Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                                write-host "Configuration Change found. Discounting Analytic Coverage" -ForegroundColor Yellow
+                                write-host "This detection is either Delayed or contains Configuration Change (Data Sources). Discounting both Analytic Coverage and Visibility" -ForegroundColor Yellow
                                 $analytic_discount +=1
-                            } elseif ($substep.Detections.Detection_Type -eq "Telemetry") {
-                                write-host " "
-                                write-host " "
-                                write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan 
-                                Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                                write-host "Configuration Change found. Discounting Visibility" -ForegroundColor Yellow
                                 $visibility_discount +=1
                             }
                         }
-                        "N/A" { 
-                            write-host " "
-                            write-host " "
-                            write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
-                            write-host "Detection: N/A" }
-                        Default {}
-                    }
-                }
-                elseif ($substep.Detections.Modifiers.count -gt 1){
-                    if ("Technique","General","Tactic" -contains $substep.Detections.Detection_Type) {
-                        if ($substep.Detections.Modifiers -contains "Configuration Change (Data Sources)") {
+                        elseif ("Telemetry" -contains $substep.Detections.Detection_Type) {
                             write-host " "
                             write-host " "
                             write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
                             Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                            write-host "This detection is either Delayed or contains Configuration Change (Data Sources). Discounting both Analytic Coverage and Visibility" -ForegroundColor Yellow
-                            $analytic_discount +=1
+                            write-host "This Telemetry detection has a config change. Discounting Visibility" -ForegroundColor Yellow
                             $visibility_discount +=1
                         }
-                    }
-                    elseif ("Telemetry" -contains $substep.Detections.Detection_Type) {
-                        write-host " "
-                        write-host " "
-                        write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
-                        Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                        write-host "This Telemetry detection has a config change. Discounting Visibility" -ForegroundColor Yellow
-                        $visibility_discount +=1
-                    }
-                    else {
-                        Write-Host "ERROR: Couldn't identify type of the detection" -ForegroundColor Red
-                    }
-                    # It means there is only one detection with multiple Modifiers
-                    switch ($substep.Detections.Detection_Type) {
-                        "Technique" { 
-                            write-host " "
-                            write-host " "
-                            write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
-                            Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                            write-host "Multiple configuration changes resulted to Technique detection. Discounting Analytic Coverage" -ForegroundColor Yellow
-                            $analytic_discount +=1
+                        else {
+                            Write-Host "ERROR: Couldn't identify type of the detection" -ForegroundColor Red
                         }
-                        "Telemetry" { 
-                            write-host " "
-                            write-host " "
-                            write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
-                            Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-                            write-host "Multiple configuration changes resulted to Telemetry detection. Discounting Visibility" -ForegroundColor Yellow
-                            $visibility_discount +=1
+                        # It means there is only one detection with multiple Modifiers
+                        switch ($substep.Detections.Detection_Type) {
+                            "Technique" { 
+                                write-host " "
+                                write-host " "
+                                write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
+                                Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+                                write-host "Multiple configuration changes resulted to Technique detection. Discounting Analytic Coverage" -ForegroundColor Yellow
+                                $analytic_discount +=1
+                            }
+                            "Telemetry" { 
+                                write-host " "
+                                write-host " "
+                                write-host "$vendor_name - Substep $($substep.Substep):" -ForegroundColor Cyan
+                                Write-Output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+                                write-host "Multiple configuration changes resulted to Telemetry detection. Discounting Visibility" -ForegroundColor Yellow
+                                $visibility_discount +=1
+                            }
+                            Default {}
                         }
-                        Default {}
                     }
                 }
             }
         }
 
         if ($substep.Detections.count -gt 1) {
-            write-host " "
-            write-host " "
-            write-host "$vendor_name - Substep $($substep.Substep). Found $($substep.Detections.count) detections:" -ForegroundColor Cyan
-            Write-output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-
             # Check for highest detection regardless of a config change
             if ($substep.Detections.Detection_Type -contains "Technique" -Or
                 $substep.Detections.Detection_Type -contains "General" -Or
                 $substep.Detections.Detection_Type -contains "Tactic") {
                     $visibility_steps +=1
                     $analytic_steps +=1
-                    # write-output "Substep $($substep.Substep)"
-                    # write-output $substep.Detections.Detection_Type | ft
-                    # write-host "ADDING ANALYTICS AND VISIBILITY" -ForegroundColor gREEN
                 }
             elseif ($substep.Detections.Detection_Type -contains "Telemetry"){
                 $visibility_steps +=1
-                # write-output "Substep $($substep.Substep)"
-                # write-output $substep.Detections.Detection_Type | ft
-                # write-host "ADDING VISIBILITY" -ForegroundColor gREEN
             }
 
-            # Process config changes
-            # What was the original detection without modifiers?
-            $original_detection = ($substep.Detections | where-object {$_.modifiers.count -eq 0}).Detection_Type
-            if ($null -ne $original_detection) {
-                write-host "The original detection was: $original_detection"
-            }
-            switch ($original_detection) {
-                "Technique" {
-                    write-host " "
-                    write-host "Verdict: No change"
-                } 
-                "General" {
-                    write-host " "
-                    write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)"
-                    $technique_discount +=1
-                } 
-                "Tactic" {
-                    write-host " "
-                    write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)"
-                    $technique_discount +=1
+            if ($changes) {
+                # Process config changes
+                # What was the original detection without modifiers?
+                write-host " "
+                write-host " "
+                write-host "$vendor_name - Substep $($substep.Substep). Found $($substep.Detections.count) detections:" -ForegroundColor Cyan
+                Write-output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+    
+                $original_detection = ($substep.Detections | where-object {$_.modifiers.count -eq 0}).Detection_Type
+                if ($null -ne $original_detection) {
+                    write-host "The original detection was: $original_detection"
                 }
-                "Telemetry" {
-                    write-host " "
-                    write-host "Discounting Analytic" -ForegroundColor Yellow
-                    $analytic_discount +=1 
-                }
-                "None" { 
-                    write-host " "
-                    write-host "Discounting Visibility" -ForegroundColor Yellow 
-                    $visibility_discount +=1 
-                }
-                "N/A" {
-                    write-host " "
-                    write-host "Detection: N/A" 
-                }
-                Default {
-                    write-host " "
-                    write-host "All detections have configuration changes in this substep."
-                    if ($substep.Detections.Detection_Type -contains "Technique" -or
-                        $substep.Detections.Detection_Type -contains "General" -or
-                        $substep.Detections.Detection_Type -contains "Tactic" ) {
+                switch ($original_detection) {
+                    "Technique" {
                         write-host " "
-                        write-host "Discounting Analytic because there is no Analytic detection found without a config change." -ForegroundColor Yellow
+                        write-host "Verdict: No change"
+                    } 
+                    "General" {
+                        write-host " "
+                        write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)"
+                        $technique_discount +=1
+                    } 
+                    "Tactic" {
+                        write-host " "
+                        write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)"
+                        $technique_discount +=1
+                    }
+                    "Telemetry" {
+                        write-host " "
+                        write-host "Discounting Analytic" -ForegroundColor Yellow
                         $analytic_discount +=1 
                     }
-                    if ($substep.Detections.Detection_Type -contains "Telemetry") {
-                        write-host "Discounting Visibility because there is no Telemetry detection found without a config change." -ForegroundColor Yellow
+                    "None" { 
+                        write-host " "
+                        write-host "Discounting Visibility" -ForegroundColor Yellow 
                         $visibility_discount +=1 
                     }
+                    "N/A" {
+                        write-host " "
+                        write-host "Detection: N/A" 
+                    }
+                    Default {
+                        write-host " "
+                        write-host "All detections have configuration changes in this substep."
+                        if ($substep.Detections.Detection_Type -contains "Technique" -or
+                            $substep.Detections.Detection_Type -contains "General" -or
+                            $substep.Detections.Detection_Type -contains "Tactic" ) {
+                            write-host " "
+                            write-host "Discounting Analytic because there is no Analytic detection found without a config change." -ForegroundColor Yellow
+                            $analytic_discount +=1 
+                        }
+                        if ($substep.Detections.Detection_Type -contains "Telemetry") {
+                            write-host "Discounting Visibility because there is no Telemetry detection found without a config change." -ForegroundColor Yellow
+                            $visibility_discount +=1 
+                        }
+                    }
+                }
+
+                if ($substep.Detections.count -gt 3) {
+                    write-host "ERROR: Too many detections. Cannot process."
                 }
             }
-
-            if ($substep.Detections.count -gt 3) {
-                write-host "ERROR: Too many detections. Cannot process."
-            }
-
         }
 
         $Detection = ($substep.Detections | Select-Object -ExpandProperty Detection_Type) -join ", "
@@ -343,7 +334,7 @@ foreach ($file in $files) {
     #
     if ($json.adversaries.participant_capabilities -contains "Linux Capability") { $Linux = "Yes" } else { $Linux = "No" }
 
-    $total_steps_summary = $summary.Total_Substeps
+    $total_substeps_summary = $summary.Total_Substeps
     $json.adversaries.detections_by_step.scenario_1.steps.substeps | foreach-object {
         if ($_.detections.modifiers -gt 0) {
             $config_changes1 +=1
@@ -354,11 +345,24 @@ foreach ($file in $files) {
             $config_changes1 +=1
         }
     }
-    $config_changes_total = $config_changes1 + $config_changes2
+    #$config_changes_total = $config_changes1 + $config_changes2
     #$detection_logic_changed = ($json.adversaries.detections_by_step.scenario_1.steps.substeps.detections.modifiers | where-object {$_ -eq "Configuration Change (Detection Logic)" }).count
     #$config_changes_ux = ($json.adversaries.detections_by_step.scenario_1.steps.substeps.detections.modifiers | where-object {$_ -eq "Configuration Change (UX)" }).count
     #$delayed = ($json.adversaries.detections_by_step.scenario_1.steps.substeps.detections.modifiers | where-object {$_ -eq "delayed"}).count
     #$data_sources_changed = ($json.adversaries.detections_by_step.scenario_1.steps.substeps.detections.modifiers | where-object {$_ -eq "Configuration Change (Data Sources)"}).count
+
+    if ($os_list.count -eq 2 -and $Linux -eq "yes") {
+        $total_substeps = 109
+    }
+    elseif ($os_list.count -eq 2 -and $Linux -eq "no") {
+        $total_substeps = 90
+    }
+    elseif ($os_list -eq "Linux") {
+        $total_substeps = 19
+    }
+    elseif ($os_list -eq "Windows") {
+        $total_substeps = 90
+    }
 
     # Calculate final scores 
     if ($changes) {
@@ -369,59 +373,82 @@ foreach ($file in $files) {
         $Visibility_Score = $visibility_steps / $total_substeps
     }
 
-    $result = [PSCustomObject]@{
-        Vendor = $vendor_name
-        Analytic_Coverage_Percentage = $summary.Analytic_Coverage.Split("/")[0] / $total_steps_summary
-        Visibility_Percentage = $summary.Visibility.Split("/")[0] / $total_steps_summary
-        Analytic_Coverage = $summary.Analytic_Coverage
-        Visibility_Coverage = $summary.Visibility
-        Telemetry_Coverage = $summary.Telemetry_Coverage
-        Analytic = $summary.Analytic_Coverage.Split("/")[0]
-        Analytic_Steps = $analytic_steps
-        Visibility = $summary.Visibility.Split("/")[0]
-        Visibility_Steps = $visibility_steps
-        Total_Steps_Summary = $total_steps_summary
-        Total_Steps = $total_substeps
-        Linux = $Linux
-        Analytic_To_Deduct = $analytic_discount
-        #Analytic_Without_CCs = $summary.Analytic_Coverage.Split("/")[0] - $analytic_discount
-        Visibility_To_Deduct = $visibility_discount
-        #Visibility_Without_CCs = $summary.Visibility.Split("/")[0] - $visibility_discount
-        #New_Analytic = ($summary.Analytic_Coverage.Split("/")[0] - $analytic_discount) / $total_steps_summary
-        #New_Visibility = ($summary.Visibility.Split("/")[0] - $visibility_discount) / $total_steps_summary
-        Analytic_Score = $Analytic_Score
-        Visibility_Score = $Visibility_Score
-        #Techniques_To_Deduct  = $technique_discount
-        Config_Changes_Total = $config_changes_total
-        #Detection_Logic_Changes = $detection_logic_changed
-        #Data_Sources_Changes = $data_sources_changed
-        #UX_Changes = $config_changes_ux
-        #Delayed_Detections = $delayed
+    if ($changes) {
+        $result = [PSCustomObject]@{
+            Vendor = $vendor_name
+            Analytic_Score = $Analytic_Score
+            Analytic_Steps = $analytic_steps
+            Analytic_Deducted = $analytic_discount
+            Original_Analytic_Score = $analytic_steps / $total_substeps
+            Visibility_Score = $Visibility_Score
+            Visibility_Steps = $visibility_steps
+            Visibility_Deducted = $visibility_discount
+            Original_Visibility_Score = $visibility_steps / $total_substeps
+            #Analytic_Coverage_Percentage = $summary.Analytic_Coverage.Split("/")[0] / $total_substeps_summary
+            #Visibility_Percentage = $summary.Visibility.Split("/")[0] / $total_substeps_summary
+            #Analytic_Coverage = $summary.Analytic_Coverage
+            #Visibility_Coverage = $summary.Visibility
+            #Telemetry_Coverage = $summary.Telemetry_Coverage
+            #Analytic = $summary.Analytic_Coverage.Split("/")[0]
+            #Visibility = $summary.Visibility.Split("/")[0]
+            #Total_Steps_Summary = $total_substeps_summary
+            Total_Steps = $total_substeps
+            Linux = $Linux
+
+            #Analytic_Without_CCs = $summary.Analytic_Coverage.Split("/")[0] - $analytic_discount
+            #Visibility_Without_CCs = $summary.Visibility.Split("/")[0] - $visibility_discount
+            #New_Analytic = ($summary.Analytic_Coverage.Split("/")[0] - $analytic_discount) / $total_substeps_summary
+            #New_Visibility = ($summary.Visibility.Split("/")[0] - $visibility_discount) / $total_substeps_summary
+            #Techniques_To_Deduct  = $technique_discount
+            #Config_Changes_Total = $config_changes_total
+            #Detection_Logic_Changes = $detection_logic_changed
+            #Data_Sources_Changes = $data_sources_changed
+            #UX_Changes = $config_changes_ux
+            #Delayed_Detections = $delayed
+        }
+    }
+    else {
+        $result = [PSCustomObject]@{
+            Vendor = $vendor_name
+            Analytic_Score = $Analytic_Score
+            Original_Analytic_Score = $summary.Analytic_Coverage.Split("/")[0] / $total_substeps_summary
+            Analytic_Steps = $analytic_steps
+            Visibility_Score = $Visibility_Score
+            Original_Visibility_Score = $summary.Visibility.Split("/")[0] / $total_substeps_summary
+            Visibility_Steps = $visibility_steps
+            #Analytic_Coverage = $summary.Analytic_Coverage
+            #Visibility_Coverage = $summary.Visibility
+            Total_Steps = $total_substeps
+            Linux = $Linux
+        }
     }
 
     $summary_results += $result
-
-    Write-host " "
-    Write-host "----------------------------------------" -ForegroundColor Green
-    Write-Host "$vendor_name config changes summary" -ForegroundColor Green
-    Write-host "----------------------------------------" -ForegroundColor Green
-    Write-host "Analytic steps to deduct: " $analytic_discount -ForegroundColor Yellow
-    Write-host "Visibility steps to deduct: " $visibility_discount -ForegroundColor Yellow
-    Write-host "Technique steps to deduct (experimental): " $technique_discount -ForegroundColor Cyan
-    $conf_changes_vendor = [PSCustomObject]@{
-        Vendor = $vendor_name
-        Analytic_To_Deduct = $analytic_discount
-        Visibility_To_Deduct = $visibility_discount
-        #Technique_To_Deduct = $technique_discount
-    }
-    $conf_changes_summary += $conf_changes_vendor
-
     $wkst_detection | Export-Excel -Path $detection_results_xlsx -AutoSize -TableName $vendor_name -WorksheetName $vendor_name -FreezeTopRowFirstColumn
 
+    if ($changes) {
+        Write-host " "
+        Write-host "----------------------------------------" -ForegroundColor Green
+        Write-Host "$vendor_name config changes summary" -ForegroundColor Green
+        Write-host "----------------------------------------" -ForegroundColor Green
+        Write-host "Analytic steps to deduct: " $analytic_discount -ForegroundColor Yellow
+        Write-host "Visibility steps to deduct: " $visibility_discount -ForegroundColor Yellow
+        Write-host "Technique steps to deduct (experimental): " $technique_discount -ForegroundColor Cyan
+        $conf_changes_vendor = [PSCustomObject]@{
+            Vendor = $vendor_name
+            Analytic_To_Deduct = $analytic_discount
+            Visibility_To_Deduct = $visibility_discount
+            #Technique_To_Deduct = $technique_discount
+        }
+        $conf_changes_summary += $conf_changes_vendor
+    }
 
     #
     # Parse protection test results
     #
+    if (-Not $protection){
+        continue
+    }
     $tests = $json.adversaries.protections.protection_tests
     #write-output $scenario.Steps
     foreach ($test in $tests) {
@@ -462,17 +489,21 @@ foreach ($file in $files) {
 }
 
 #$summary_results | Export-Csv 2021_results.csv -NoTypeInformation
-$summary_results | Export-Excel -Path $detection_results_xlsx -AutoSize -TableName Summary -WorksheetName "Summary" -FreezeTopRowFirstColumn -BoldTopRow
-$summary_results_protection | Export-Excel -Path $protection_results_xlsx -AutoSize -TableName Summary -WorksheetName "Summary"
+$summary_results | Export-Excel -Path $detection_results_summary_xlsx -AutoSize -TableName Summary -WorksheetName "Summary" -FreezeTopRowFirstColumn -BoldTopRow
+if ($protection) {
+    $summary_results_protection | Export-Excel -Path $protection_results_xlsx -AutoSize -TableName Summary -WorksheetName "Summary"
+}
 
-Write-Output $summary_results | Format-Table
-Write-Output $conf_changes_summary | Format-Table
 Write-Host "---------------------------------DONE---------------------------------" -ForegroundColor Green
-
-if (Test-Path -path $detection_results_xlsx) { write-host "Check the detection test results in $detection_results_xlsx" -ForegroundColor Cyan } 
+if (Test-Path -path $detection_results_summary_xlsx) { write-host "Summary detection test results saved to $detection_results_summary_xlsx" -ForegroundColor Cyan } 
+else { write-host "Failed to export summary detection test results to $detection_results_summary_xlsx" }
+if (Test-Path -path $detection_results_xlsx) { write-host "Detaled detection test results saved to $detection_results_xlsx" -ForegroundColor Cyan } 
 else { write-host "Failed to export the detection test results to $detection_results_xlsx" }
-if (Test-Path -path $protection_results_xlsx) { write-host "Check the protection test results in $protection_results_xlsx" -ForegroundColor Cyan }
-else { write-host "Failed to export the protection test results to $detection_results_xlsx" }
+
+if ($protection) {
+    if (Test-Path -path $protection_results_xlsx) { write-host "Protection test results saved to $protection_results_xlsx" -ForegroundColor Cyan }
+    else { write-host "Failed to export the protection test results to $detection_results_xlsx" }
+}
 Write-Host "----------------------------------------------------------------------" -ForegroundColor Green
 
 
