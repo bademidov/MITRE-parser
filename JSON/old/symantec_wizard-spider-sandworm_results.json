@@ -3082,7 +3082,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change (Detection Logic)"
+                        "Configuration Change"
                       ],
                       "Screenshots": [
                         {
@@ -3178,7 +3178,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change (Detection Logic)"
+                        "Configuration Change"
                       ],
                       "Screenshots": [
                         {

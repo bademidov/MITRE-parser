@@ -784,7 +784,7 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
@@ -2736,7 +2736,7 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
@@ -3191,7 +3191,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -4365,7 +4365,7 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
@@ -4531,9 +4531,7 @@
                     {
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
-                      "Modifiers": [
-                        "Delayed"
-                      ],
+                      "Modifiers": [],
                       "Screenshots": [
                         {
                           "Name": "WizardSpider-Sandworm_PA_19.A.4.png",

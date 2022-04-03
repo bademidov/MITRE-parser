@@ -2178,7 +2178,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -2329,7 +2329,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "General",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -2386,7 +2386,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -2460,7 +2460,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -3396,7 +3396,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -3774,7 +3774,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "None",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -3819,7 +3819,6 @@
                       "Detection_Note": null,
                       "Detection_Type": "None",
                       "Modifiers": [
-                        "Configuration Change",
                         "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
@@ -3932,7 +3931,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "None",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [],
                       "Footnotes": [],
@@ -4254,7 +4253,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "None",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -4523,7 +4522,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "General",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {
@@ -4720,7 +4719,7 @@
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change"
+                        "Configuration Change (Detection Logic)"
                       ],
                       "Screenshots": [
                         {

@@ -8,7 +8,8 @@
       "Domain": "ENTERPRISE",
       "Evaluation_Year": 2021,
       "Participant_Capabilities": [
-        "Linux Capability"
+        "Linux Capability",
+        "Protection Capability"
       ],
       "Aggregate_Data": {
         "Aggregates": {
@@ -3982,9 +3983,7 @@
                     {
                       "Detection_Note": null,
                       "Detection_Type": "Technique",
-                      "Modifiers": [
-                        "Configuration Change"
-                      ],
+                      "Modifiers": [],
                       "Screenshots": [
                         {
                           "Name": "WizardSpider-Sandworm_CR_16.A.3.png",

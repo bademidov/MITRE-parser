@@ -1,5 +1,5 @@
 {
-  "Participant_Name": "symantec",
+  "Participant_Name": "paloaltonetworks",
   "Public_Release": "",
   "Adversaries": [
     {
@@ -14,13 +14,13 @@
       "Aggregate_Data": {
         "Aggregates": {
           "Total_Substeps": 109,
-          "Total_Detections": 93,
+          "Total_Detections": 107,
           "Total_Alerts": null,
-          "Analytic_Detections": 88,
-          "Telemetry_Detections": 5,
-          "Analytic_Coverage": "87/109",
-          "Telemetry_Coverage": "5/109",
-          "Visibility": "92/109"
+          "Analytic_Detections": 107,
+          "Telemetry_Detections": 0,
+          "Analytic_Coverage": "107/109",
+          "Telemetry_Coverage": "0/109",
+          "Visibility": "107/109"
         },
         "Aggregates_Without_MSSP": {}
       },
@@ -54,19 +54,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.1_1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.1_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.1_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -103,21 +97,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.2.png",
                           "Data_Sources": [
                             "Module: Module Load"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.2_1.png",
                           "Data_Sources": [
                             "Module: Module Load"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.2_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.2_2.png",
                           "Data_Sources": [
-                            "Module: Module Load"
+                            "Script: Script Execution"
                           ]
                         }
                       ],
@@ -152,39 +146,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.3.png",
-                          "Data_Sources": [
-                            "File: File Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.3_1.png",
-                          "Data_Sources": [
-                            "File: File Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.3_2.png",
-                          "Data_Sources": [
-                            "Network Traffic: Network Traffic Content"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.3_3.png",
-                          "Data_Sources": [
-                            "Network Traffic: Network Traffic Content"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.3_4.png",
-                          "Data_Sources": [
-                            "Network Traffic: Network Traffic Content"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.3_5.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.3.png",
                           "Data_Sources": [
                             "Script: Script Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_1.A.3_1.png",
+                          "Data_Sources": [
+                            "Script: Script Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_1.A.3_2.png",
+                          "Data_Sources": [
+                            "File: File Creation"
                           ]
                         }
                       ],
@@ -219,19 +195,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.4.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.4_1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.4_3.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.4_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -268,39 +238,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.5.png",
                           "Data_Sources": [
                             "File: File Metadata"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.5_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.5_1.png",
                           "Data_Sources": [
                             "File: File Metadata"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.5_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.5_2.png",
                           "Data_Sources": [
                             "File: File Metadata"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.5_3.png",
-                          "Data_Sources": [
-                            "Script: Script Execution"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.5_4.png",
-                          "Data_Sources": [
-                            "Script: Script Execution"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.5_5.png",
-                          "Data_Sources": [
-                            "Script: Script Execution"
                           ]
                         }
                       ],
@@ -335,15 +287,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.6.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.6.png",
                           "Data_Sources": [
-                            "Command: Command Execution"
+                            "Script: Script Execution"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.6_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.6_2.png",
                           "Data_Sources": [
-                            "Command: Command Execution"
+                            "Script: Script Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_1.A.6_3.png",
+                          "Data_Sources": [
+                            "Script: Script Execution"
                           ]
                         }
                       ],
@@ -378,31 +336,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.7.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.7_1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.7_2.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.7_3.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.7_4.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.7.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -439,13 +373,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.8.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.8.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.8_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.8_1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
@@ -482,13 +416,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.9.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.9.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.9_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.9_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -525,22 +459,20 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.10.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.10.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.10_1.png",
-                          "Data_Sources": [
-                            "Network Traffic: Network Connection Creation",
                             "Network Traffic: Network Traffic Content"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_1.A.10_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_1.A.10_1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation",
+                            "Network Traffic: Network Traffic Content"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_1.A.10_2.png",
+                          "Data_Sources": [
                             "Network Traffic: Network Traffic Content"
                           ]
                         }
@@ -572,9 +504,30 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
-                      "Modifiers": [],
-                      "Screenshots": [],
+                      "Detection_Type": "Technique",
+                      "Modifiers": [
+                        "Delayed"
+                      ],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_1.A.11.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Traffic Content"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_1.A.11_1.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Traffic Content"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_1.A.11_2.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Traffic Content"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -608,23 +561,23 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_2.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_2.A.1.png",
                           "Data_Sources": [
                             "Windows Registry: Windows Registry Key Modification"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_2.A.1_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_2.A.1_1.png",
                           "Data_Sources": [
                             "Windows Registry: Windows Registry Key Modification"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_2.A.1_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_2.A.1_2.png",
                           "Data_Sources": [
                             "Windows Registry: Windows Registry Key Modification"
                           ]
@@ -663,9 +616,22 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_3.A.1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_3.A.1_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -693,9 +659,18 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
-                      "Modifiers": [],
-                      "Screenshots": [],
+                      "Detection_Type": "Technique",
+                      "Modifiers": [
+                        "Delayed"
+                      ],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_3.A.2.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -723,17 +698,17 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_3.A.3.png",
+                          "Name": "WizardSpider-Sandworm_PA_3.A.3.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_3.A.3_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_3.A.3_1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
@@ -766,13 +741,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_3.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_3.A.4.png",
                           "Data_Sources": [
-                            "Process: Process Creation"
+                            "Script: Script Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_3.A.4_1.png",
+                          "Data_Sources": [
+                            "Script: Script Execution"
                           ]
                         }
                       ],
@@ -807,15 +788,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_3.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_3.A.5.png",
                           "Data_Sources": [
-                            "Script: Script Execution"
+                            "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_3.A.5_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_3.A.5_1.png",
                           "Data_Sources": [
-                            "Script: Script Execution"
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_3.A.5_2.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -856,9 +843,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_4.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_4.A.1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation"
+                            "Logon Session: Logon Session Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_4.A.1_1.png",
+                          "Data_Sources": [
+                            "Logon Session: Logon Session Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_4.A.1_2.png",
+                          "Data_Sources": [
+                            "Logon Session: Logon Session Creation"
                           ]
                         }
                       ],
@@ -893,13 +892,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_4.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_4.A.2.png",
                           "Data_Sources": [
                             "Logon Session: Logon Session Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_4.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_4.A.2_1.png",
                           "Data_Sources": [
                             "Logon Session: Logon Session Creation"
                           ]
@@ -932,11 +931,23 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Telemetry",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_4.A.3.png",
+                          "Name": "WizardSpider-Sandworm_PA_4.A.3.png",
+                          "Data_Sources": [
+                            "File: File Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_4.A.3_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_4.A.3_5.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
@@ -973,17 +984,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_4.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_4.A.4.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation",
-                            "Network Traffic: Network Traffic Content"
+                            "Network Traffic: Network Connection Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_4.A.4_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_4.A.4_1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation",
-                            "Network Traffic: Network Traffic Content"
+                            "Process: OS API Execution"
                           ]
                         }
                       ],
@@ -1018,16 +1027,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_4.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_4.A.5.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation",
-                            "Network Traffic: Network Traffic Content"
+                            "Network Traffic: Network Connection Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_4.A.5_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_4.A.5_1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Traffic Flow"
+                            "Process: OS API Execution"
                           ]
                         }
                       ],
@@ -1068,13 +1076,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.1_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.1_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1111,16 +1119,14 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.2.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.2_1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
+                          "Name": "WizardSpider-Sandworm_PA_5.A.2_1.png",
+                          "Data_Sources": []
                         }
                       ],
                       "Footnotes": [],
@@ -1154,25 +1160,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.3.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.3_1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.3_2.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.3_3.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.3.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1205,23 +1193,11 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.4.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.4_1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.4_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.4.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1258,13 +1234,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.5.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.5_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.5.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1301,13 +1271,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.6.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.6_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.6.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1344,13 +1308,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.7.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.7.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.7_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.7_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1387,13 +1351,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.8.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.8_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.8.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1426,17 +1384,17 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.9.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.9.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_5.A.9_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_5.A.9_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1479,13 +1437,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_6.A.1.png",
-                          "Data_Sources": [
-                            "File: File Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_6.A.1_3.png",
+                          "Name": "WizardSpider-Sandworm_PA_6.A.1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
@@ -1522,9 +1474,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_6.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_6.A.2.png",
                           "Data_Sources": [
-                            "Process: Process Creation"
+                            "Active Directory: Active Directory Credential Request"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_6.A.2_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
                           ]
                         }
                       ],
@@ -1565,16 +1523,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_7.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_7.A.1.png",
                           "Data_Sources": [
                             "Network Traffic: Network Connection Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_7.A.1_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_7.A.1_1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation",
-                            "Network Traffic: Network Traffic Flow"
+                            "Logon Session: Logon Session Creation"
                           ]
                         }
                       ],
@@ -1609,13 +1566,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_7.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_7.A.2.png",
                           "Data_Sources": [
                             "Logon Session: Logon Session Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_7.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_7.A.2_1.png",
                           "Data_Sources": [
                             "Logon Session: Logon Session Creation"
                           ]
@@ -1652,7 +1609,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_7.A.3.png",
+                          "Name": "WizardSpider-Sandworm_PA_7.A.3.png",
+                          "Data_Sources": [
+                            "File: File Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_7.A.3_1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
@@ -1685,19 +1648,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_7.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_7.A.4.png",
                           "Data_Sources": [
                             "Script: Script Execution"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_7.A.4_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_7.A.4_1.png",
                           "Data_Sources": [
-                            "Windows Registry: Windows Registry Key Modification"
+                            "Script: Script Execution"
                           ]
                         }
                       ],
@@ -1732,9 +1695,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_7.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_7.A.5.png",
                           "Data_Sources": [
-                            "Process: Process Creation"
+                            "Network Traffic: Network Connection Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_7.A.5_1.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Connection Creation"
                           ]
                         }
                       ],
@@ -1771,17 +1740,11 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_8.A.1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_8.A.1_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_8.A.1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1814,19 +1777,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_8.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_8.A.2.png",
                           "Data_Sources": [
-                            "Process: Process Creation"
+                            "Windows Registry: Windows Registry Key Access"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_8.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_8.A.2_1.png",
                           "Data_Sources": [
-                            "Process: Process Creation"
+                            "Windows Registry: Windows Registry Key Access"
                           ]
                         }
                       ],
@@ -1863,17 +1826,17 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_9.A.1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.1_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_9.A.1_1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
@@ -1910,37 +1873,19 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_9.A.2.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_9.A.2_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.2_2.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.2_3.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.2_4.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.2_5.png",
+                          "Name": "WizardSpider-Sandworm_PA_9.A.2_2.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -1977,25 +1922,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.3.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.3_1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.3_2.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.3_3.png",
+                          "Name": "WizardSpider-Sandworm_PA_9.A.3.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -2028,19 +1955,23 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_9.A.4.png",
+                          "Data_Sources": [
+                            "File: File Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_9.A.4_1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
                         }
                       ],
-                      "Footnotes": [
-                        "Though not visible in the captured images, MITRE Engenuity was able to observe the relevant enrichments of  a \"cmd.exe created window.bat\" event description for this sub-step during the Evaluation process."
-                      ],
+                      "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
                       "Indicator_Name": null
@@ -2071,19 +2002,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.5.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.5_1.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_9.A.5_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_9.A.5.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -2124,20 +2043,23 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_10.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_10.A.1.png",
                           "Data_Sources": [
-                            "File: File Creation",
-                            "Process: Process Metadata"
+                            "File: File Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.1_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
                           ]
                         }
                       ],
-                      "Footnotes": [
-                        "Though not visible in the captured images, MITRE Engenuity was able to observe the relevant enrichments of a \"cmd.exe created ryuk.exe\" event description for this sub-step during the Evaluation process."
-                      ],
+                      "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
                       "Indicator_Name": null
@@ -2164,9 +2086,28 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.2.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.2_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.2_2.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        }
+                      ],
                       "Footnotes": [
                         "During execution of the Evaluation, there were no resulting changes to the token of ryuk.exe, though the AdjustTokenPrivileges() API function was executed, since the target SE_PRIVILEGE_ENABLED privilege was already enabled in the process token. The detection method(s) exhibited are subsequently scoped."
                       ],
@@ -2196,9 +2137,22 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.3.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.3_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -2230,21 +2184,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_10.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_10.A.4.png",
                           "Data_Sources": [
-                            "Process: Process Modification"
+                            "Process: OS API Execution"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_10.A.4_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_10.A.4_1.png",
                           "Data_Sources": [
-                            "Process: Process Modification"
+                            "Process: Process Metadata"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_10.A.4_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_10.A.4_2.png",
                           "Data_Sources": [
-                            "Process: Process Modification"
+                            "Process: OS API Execution"
                           ]
                         }
                       ],
@@ -2275,9 +2229,28 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.5.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.5_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.5_2.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -2305,9 +2278,34 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.6.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.6_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.6_2.png",
+                          "Data_Sources": [
+                            "File: File Access"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_10.A.6_3.png",
+                          "Data_Sources": [
+                            "File: File Access"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -2335,24 +2333,16 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Telemetry",
-                      "Modifiers": [
-                        "Delayed"
-                      ],
+                      "Detection_Type": "Technique",
+                      "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_10.A.7.png",
-                          "Data_Sources": [
-                            "File: File Modification",
-                            "Module: Module Load"
-                          ]
+                          "Name": "WizardSpider-Sandworm_PA_10.A.7.png",
+                          "Data_Sources": []
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_10.A.7_1.png",
-                          "Data_Sources": [
-                            "File: File Modification",
-                            "Module: Module Load"
-                          ]
+                          "Name": "WizardSpider-Sandworm_PA_10.A.7_1.png",
+                          "Data_Sources": []
                         }
                       ],
                       "Footnotes": [],
@@ -2396,7 +2386,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_11.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_11.A.1.png",
+                          "Data_Sources": [
+                            "Logon Session: Logon Session Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_11.A.1_1.png",
                           "Data_Sources": [
                             "Logon Session: Logon Session Creation"
                           ]
@@ -2435,15 +2431,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_11.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_11.A.2.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_11.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_11.A.2_1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation"
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -2480,15 +2476,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_11.A.3.png",
+                          "Name": "WizardSpider-Sandworm_PA_11.A.3.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_11.A.3_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_11.A.3_1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation"
+                            "File: File Creation"
                           ]
                         }
                       ],
@@ -2521,13 +2517,13 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Telemetry",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_11.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_11.A.4.png",
                           "Data_Sources": [
-                            "File: File Modification"
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -2570,9 +2566,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_12.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_12.A.1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_12.A.1_1.png",
+                          "Data_Sources": [
+                            "Process: Process Metadata"
                           ]
                         }
                       ],
@@ -2605,13 +2607,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_12.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_12.A.2.png",
                           "Data_Sources": [
                             "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_12.A.2_1.png",
+                          "Data_Sources": [
+                            "Process: Process Metadata"
                           ]
                         }
                       ],
@@ -2648,7 +2656,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_12.A.3.png",
+                          "Name": "WizardSpider-Sandworm_PA_12.A.3.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -2687,7 +2695,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_12.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_12.A.4.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_12.A.4_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -2722,19 +2736,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Technique",
+                      "Detection_Type": "General",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_12.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_12.A.5_1.png",
                           "Data_Sources": [
-                            "File: File Access"
+                            "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_12.A.5_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_12.A.5.png",
                           "Data_Sources": [
-                            "File: File Access"
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -2777,9 +2791,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_13.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_13.A.1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_13.A.1_1.png",
+                          "Data_Sources": [
+                            "File: File Creation"
                           ]
                         }
                       ],
@@ -2812,13 +2832,20 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_13.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_13.A.2.png",
                           "Data_Sources": [
-                            "Process: Process Creation"
+                            "Process: Process Creation",
+                            "Process: Process Metadata"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_13.A.2_1.png",
+                          "Data_Sources": [
+                            "Process: Process Metadata"
                           ]
                         }
                       ],
@@ -2851,12 +2878,20 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_13.A.3.png",
-                          "Data_Sources": []
+                          "Name": "WizardSpider-Sandworm_PA_13.A.3.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Connection Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_13.A.3_1.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Connection Creation"
+                          ]
                         }
                       ],
                       "Footnotes": [],
@@ -2888,9 +2923,16 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_13.A.4.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Traffic Content"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -2920,17 +2962,17 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_13.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_13.A.5.png",
                           "Data_Sources": [
                             "Network Traffic: Network Connection Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_13.A.5_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_13.A.5_1.png",
                           "Data_Sources": [
                             "Network Traffic: Network Connection Creation"
                           ]
@@ -2975,10 +3017,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.1.png",
                           "Data_Sources": [
-                            "File: File Modification",
                             "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_14.A.1_1.png",
+                          "Data_Sources": [
+                            "Process: Process Metadata"
                           ]
                         }
                       ],
@@ -3015,15 +3062,16 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.2.png",
                           "Data_Sources": [
-                            "File: File Creation"
+                            "Process: Process Metadata",
+                            "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.2_1.png",
                           "Data_Sources": [
-                            "File: File Creation"
+                            "Process: Process Metadata"
                           ]
                         }
                       ],
@@ -3056,45 +3104,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.3_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.3.png",
                           "Data_Sources": [
-                            "File: File Access",
-                            "Process: Process Creation"
+                            "Command: Command Execution"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.3_3.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.3_1.png",
                           "Data_Sources": [
-                            "File: File Access"
-                          ]
-                        }
-                      ],
-                      "Footnotes": [],
-                      "Data_Sources": [],
-                      "Indicator": null,
-                      "Indicator_Name": null
-                    },
-                    {
-                      "Detection_Note": null,
-                      "Detection_Type": "Technique",
-                      "Modifiers": [
-                        "Configuration Change (Detection Logic)"
-                      ],
-                      "Screenshots": [
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.3.png",
-                          "Data_Sources": [
-                            "File: File Access"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.3_1.png",
-                          "Data_Sources": [
-                            "File: File Access"
+                            "Command: Command Execution"
                           ]
                         }
                       ],
@@ -3127,12 +3149,13 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.4.png",
                           "Data_Sources": [
+                            "Command: Command Execution",
                             "Process: Process Creation"
                           ]
                         }
@@ -3166,41 +3189,31 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
-                      "Modifiers": [],
-                      "Screenshots": [],
-                      "Footnotes": [],
-                      "Data_Sources": [],
-                      "Indicator": null,
-                      "Indicator_Name": null
-                    },
-                    {
-                      "Detection_Note": null,
                       "Detection_Type": "Technique",
                       "Modifiers": [
-                        "Configuration Change (Detection Logic)"
+                        "Configuration Change"
                       ],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.5.png",
                           "Data_Sources": [
                             "File: File Access"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.5_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.5_1.png",
                           "Data_Sources": [
                             "File: File Access"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.5_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.5_2.png",
                           "Data_Sources": [
                             "File: File Access"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_14.A.5_3.png",
+                          "Name": "WizardSpider-Sandworm_PA_14.A.5_3.png",
                           "Data_Sources": [
                             "File: File Access"
                           ]
@@ -3245,13 +3258,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.1_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.1.png",
                           "Data_Sources": [
                             "Logon Session: Logon Session Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.1_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.1_1.png",
                           "Data_Sources": [
                             "Logon Session: Logon Session Creation"
                           ]
@@ -3288,17 +3301,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.2.png",
                           "Data_Sources": [
-                            "Network Share: Network Share Access",
                             "Network Traffic: Network Connection Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.2_1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation",
-                            "Network Share: Network Share Access"
+                            "Network Traffic: Network Traffic Content"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_15.A.2_2.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Traffic Content"
                           ]
                         }
                       ],
@@ -3333,17 +3350,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.3.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.3.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Traffic Flow",
                             "File: File Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.3_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.3_1.png",
                           "Data_Sources": [
-                            "File: File Creation",
-                            "Network Traffic: Network Traffic Flow"
+                            "File: File Creation"
                           ]
                         }
                       ],
@@ -3374,32 +3389,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.4.png",
-                          "Data_Sources": [
-                            "File: File Creation",
-                            "File: File Metadata"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.4_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.4.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.4_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.4_1.png",
                           "Data_Sources": [
-                            "File: File Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.4_3.png",
-                          "Data_Sources": [
-                            "File: File Creation"
+                            "Process: Process Metadata"
                           ]
                         }
                       ],
@@ -3434,9 +3436,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.5.png",
                           "Data_Sources": [
-                            "Windows Registry: Windows Registry Key Modification"
+                            "Service: Service Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_15.A.5_1.png",
+                          "Data_Sources": [
+                            "Service: Service Creation"
                           ]
                         }
                       ],
@@ -3471,10 +3479,9 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.7.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.7.png",
                           "Data_Sources": [
-                            "Process: Process Creation",
-                            "Windows Registry: Windows Registry Key Modification"
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -3509,7 +3516,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.6.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.6.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_15.A.6_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -3546,7 +3559,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.8.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.8.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_15.A.8_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -3579,13 +3598,12 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.9.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.9.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Traffic Content",
                             "Network Traffic: Network Connection Creation"
                           ]
                         }
@@ -3621,10 +3639,9 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_15.A.10.png",
+                          "Name": "WizardSpider-Sandworm_PA_15.A.10.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation",
-                            "Network Traffic: Network Traffic Content"
+                            "Network Traffic: Network Connection Creation"
                           ]
                         }
                       ],
@@ -3661,16 +3678,25 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
-                      "Modifiers": [
-                        "Delayed"
-                      ],
+                      "Detection_Type": "Technique",
+                      "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_16.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_16.A.1_1.png",
                           "Data_Sources": [
-                            "Module: Module Load",
-                            "Command: Command Execution"
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_16.A.1.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_16.A.1_2.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
                           ]
                         }
                       ],
@@ -3701,9 +3727,22 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_16.A.2.png",
+                          "Data_Sources": [
+                            "Windows Registry: Windows Registry Key Access"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_16.A.2_1.png",
+                          "Data_Sources": [
+                            "Windows Registry: Windows Registry Key Access"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -3731,9 +3770,22 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_16.A.3.png",
+                          "Data_Sources": [
+                            "File: File Access"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_16.A.3_1.png",
+                          "Data_Sources": [
+                            "File: File Access"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -3765,7 +3817,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_16.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_16.A.4.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_16.A.4_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -3802,13 +3860,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_16.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_16.A.5.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_16.A.5_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_16.A.5_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -3847,19 +3905,17 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_17.A.1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
                         }
                       ],
-                      "Footnotes": [
-                        "Though not visible in the captured images, MITRE Engenuity was able to observe the relevant enrichments of a \"rundll32.exe created oradump.exe\" event description for this sub-step during the Evaluation process."
-                      ],
+                      "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
                       "Indicator_Name": null
@@ -3886,9 +3942,22 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_17.A.2.png",
+                          "Data_Sources": [
+                            "File: File Access"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_17.A.2_1.png",
+                          "Data_Sources": [
+                            "File: File Access"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -3916,19 +3985,23 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "General",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.3.png",
+                          "Name": "WizardSpider-Sandworm_PA_17.A.3.png",
+                          "Data_Sources": [
+                            "File: File Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_17.A.3_1.png",
                           "Data_Sources": [
                             "File: File Creation"
                           ]
                         }
                       ],
-                      "Footnotes": [
-                        "Though not visible in the captured images, MITRE Engenuity was able to observe the relevant enrichments of a \"rundll32.exe created mslog.exe\" event description for this sub-step during the Evaluation process."
-                      ],
+                      "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
                       "Indicator_Name": null
@@ -3955,9 +4028,22 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "None",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
-                      "Screenshots": [],
+                      "Screenshots": [
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_17.A.4.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_17.A.4_1.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
+                        }
+                      ],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -3986,23 +4072,8 @@
                     {
                       "Detection_Note": null,
                       "Detection_Type": "None",
-                      "Modifiers": [
-                        "Delayed"
-                      ],
-                      "Screenshots": [
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.5.png",
-                          "Data_Sources": [
-                            "Module: Module Load"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.5_1.png",
-                          "Data_Sources": [
-                            "Module: Module Load"
-                          ]
-                        }
-                      ],
+                      "Modifiers": [],
+                      "Screenshots": [],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -4034,9 +4105,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.6.png",
+                          "Name": "WizardSpider-Sandworm_PA_17.A.6.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation"
+                            "File: File Access"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_17.A.6_1.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Traffic Content"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_17.A.6_2.png",
+                          "Data_Sources": [
+                            "Network Traffic: Network Traffic Content"
                           ]
                         }
                       ],
@@ -4071,13 +4154,13 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.7.png",
+                          "Name": "WizardSpider-Sandworm_PA_17.A.7.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.7_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_17.A.7_1.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -4114,15 +4197,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.8.png",
+                          "Name": "WizardSpider-Sandworm_PA_17.A.8.png",
                           "Data_Sources": [
-                            "File: File Deletion"
+                            "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_17.A.8_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_17.A.8_1.png",
                           "Data_Sources": [
-                            "File: File Deletion"
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -4163,13 +4246,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_18.A.1.png",
-                          "Data_Sources": [
-                            "Logon Session: Logon Session Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_18.A.1_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_18.A.1.png",
                           "Data_Sources": [
                             "Logon Session: Logon Session Creation"
                           ]
@@ -4206,15 +4283,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_18.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_18.A.2.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation"
+                            "Logon Session: Logon Session Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_18.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_18.A.2_1.png",
                           "Data_Sources": [
-                            "Network Traffic: Network Connection Creation"
+                            "Logon Session: Logon Session Creation"
                           ]
                         }
                       ],
@@ -4245,19 +4322,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_18.A.3.png",
+                          "Name": "WizardSpider-Sandworm_PA_18.A.3.png",
                           "Data_Sources": [
-                            "Process: Process Metadata"
+                            "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_18.A.3_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_18.A.3_1.png",
                           "Data_Sources": [
-                            "Process: Process Metadata"
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -4288,17 +4365,12 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "General",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_18.A.4.png",
-                          "Data_Sources": []
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_18.A.4_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_18.A.4.png",
                           "Data_Sources": [
-                            "Process: Process Metadata",
                             "File: File Creation"
                           ]
                         }
@@ -4340,9 +4412,21 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.1.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.1.png",
                           "Data_Sources": [
-                            "Process: Process Metadata"
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_19.A.1_1.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_19.A.1_2.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -4377,21 +4461,15 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.2.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.2.png",
                           "Data_Sources": [
-                            "Process: Process Metadata"
+                            "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.2_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.2_1.png",
                           "Data_Sources": [
                             "Process: Process Metadata"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.2_2.png",
-                          "Data_Sources": [
-                            "Scheduled Job: Scheduled Job Creation"
                           ]
                         }
                       ],
@@ -4422,24 +4500,9 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Telemetry",
-                      "Modifiers": [
-                        "Delayed"
-                      ],
-                      "Screenshots": [
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.3.png",
-                          "Data_Sources": [
-                            "Module: Module Load"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.3_1.png",
-                          "Data_Sources": [
-                            "Module: Module Load"
-                          ]
-                        }
-                      ],
+                      "Detection_Type": "None",
+                      "Modifiers": [],
+                      "Screenshots": [],
                       "Footnotes": [],
                       "Data_Sources": [],
                       "Indicator": null,
@@ -4467,19 +4530,28 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
-                      "Modifiers": [],
+                      "Detection_Type": "Technique",
+                      "Modifiers": [
+                        "Delayed"
+                      ],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.4.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.4.png",
                           "Data_Sources": [
-                            "Command: Command Execution",
-                            "Process: Process Metadata"
+                            "Driver: Driver Load"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.4_1.png",
-                          "Data_Sources": []
+                          "Name": "WizardSpider-Sandworm_PA_19.A.4_1.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_19.A.4_2.png",
+                          "Data_Sources": [
+                            "Process: OS API Execution"
+                          ]
                         }
                       ],
                       "Footnotes": [],
@@ -4509,14 +4581,19 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.5.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.5.png",
                           "Data_Sources": [
-                            "File: File Creation",
-                            "Network Traffic: Network Connection Creation"
+                            "File: File Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_19.A.5_1.png",
+                          "Data_Sources": [
+                            "File: File Creation"
                           ]
                         }
                       ],
@@ -4547,13 +4624,24 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.6.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.6.png",
                           "Data_Sources": [
-                            "Command: Command Execution",
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_19.A.6_1.png",
+                          "Data_Sources": [
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_19.A.6_2.png",
+                          "Data_Sources": [
                             "Process: Process Metadata"
                           ]
                         }
@@ -4585,29 +4673,24 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Telemetry",
-                      "Modifiers": [
-                        "Delayed"
-                      ],
+                      "Detection_Type": "Technique",
+                      "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.7.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.7.png",
                           "Data_Sources": [
-                            "File: File Modification",
                             "Process: Process Metadata"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.7_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.7_1.png",
                           "Data_Sources": [
-                            "File: File Modification",
                             "Process: Process Metadata"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.7_2.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.7_2.png",
                           "Data_Sources": [
-                            "File: File Modification",
                             "Process: Process Metadata"
                           ]
                         }
@@ -4643,16 +4726,20 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.8.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.8.png",
                           "Data_Sources": [
-                            "Process: Process Metadata",
                             "Process: Process Creation"
                           ]
                         },
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.8_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.8_1.png",
                           "Data_Sources": [
-                            "Process: Process Metadata",
+                            "Process: Process Creation"
+                          ]
+                        },
+                        {
+                          "Name": "WizardSpider-Sandworm_PA_19.A.8_2.png",
+                          "Data_Sources": [
                             "Process: Process Creation"
                           ]
                         }
@@ -4688,13 +4775,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.9.png",
-                          "Data_Sources": [
-                            "Process: Process Creation"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.9_1.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.9.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -4731,7 +4812,7 @@
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.10.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.10.png",
                           "Data_Sources": [
                             "Process: Process Creation"
                           ]
@@ -4764,27 +4845,13 @@
                   "Detections": [
                     {
                       "Detection_Note": null,
-                      "Detection_Type": "Tactic",
+                      "Detection_Type": "Technique",
                       "Modifiers": [],
                       "Screenshots": [
                         {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.11.png",
+                          "Name": "WizardSpider-Sandworm_PA_19.A.11.png",
                           "Data_Sources": [
-                            "Command: Command Execution",
-                            "Process: Process Metadata"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.11_1.png",
-                          "Data_Sources": [
-                            "Command: Command Execution",
-                            "Process: Process Metadata"
-                          ]
-                        },
-                        {
-                          "Name": "WizardSpider-Sandworm_SY_19.A.11_2.png",
-                          "Data_Sources": [
-                            "Script: Script Execution"
+                            "Process: Process Creation"
                           ]
                         }
                       ],
@@ -4803,22 +4870,18 @@
       },
       "Eval_Range_Screenshots": {
         "Scenario_1": [
-          "WizardSpider-Sandworm_SY_1.png",
-          "WizardSpider-Sandworm_SY_1_1.png",
-          "WizardSpider-Sandworm_SY_1_2.png",
-          "WizardSpider-Sandworm_SY_1_3.png",
-          "WizardSpider-Sandworm_SY_1_4.png",
-          "WizardSpider-Sandworm_SY_1_5.png",
-          "WizardSpider-Sandworm_SY_1_6.png"
+          "WizardSpider-Sandworm_PA_1.png",
+          "WizardSpider-Sandworm_PA_1_1.png",
+          "WizardSpider-Sandworm_PA_1_2.png",
+          "WizardSpider-Sandworm_PA_1_3.png",
+          "WizardSpider-Sandworm_PA_1_4.png"
         ],
         "Scenario_2": [
-          "WizardSpider-Sandworm_SY_2.png",
-          "WizardSpider-Sandworm_SY_2_1.png",
-          "WizardSpider-Sandworm_SY_2_2.png",
-          "WizardSpider-Sandworm_SY_2_3.png",
-          "WizardSpider-Sandworm_SY_2_4.png",
-          "WizardSpider-Sandworm_SY_2_5.png",
-          "WizardSpider-Sandworm_SY_2_6.png"
+          "WizardSpider-Sandworm_PA_2.png",
+          "WizardSpider-Sandworm_PA_2_1.png",
+          "WizardSpider-Sandworm_PA_2_2.png",
+          "WizardSpider-Sandworm_PA_2_3.png",
+          "WizardSpider-Sandworm_PA_2_4.png"
         ]
       },
       "Protections": {
@@ -4831,11 +4894,30 @@
             "Substeps": [
               {
                 "Substep": "1.A.1",
-                "Protection_Type": "None",
-                "Modifiers": [],
+                "Protection_Type": "Blocked",
+                "Modifiers": [
+                  "User Consent"
+                ],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [],
+                "Screenshots": [
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_1.A.1_2.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_1.A.1_3.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_1.A.1_4.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_1.A.1_5.png",
+                    "Data_Sources": []
+                  }
+                ],
                 "Tactic": {
                   "Tactic_Id": "TA0002",
                   "Tactic_Name": "Execution"
@@ -4853,7 +4935,7 @@
               },
               {
                 "Substep": "1.A.2",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -4875,7 +4957,7 @@
               },
               {
                 "Substep": "1.A.3",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -4897,20 +4979,11 @@
               },
               {
                 "Substep": "1.A.4",
-                "Protection_Type": "Blocked",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [
-                  {
-                    "Name": "WizardSpider-Sandworm_SY_1.A.4_2.png",
-                    "Data_Sources": []
-                  },
-                  {
-                    "Name": "WizardSpider-Sandworm_SY_1.A.4_4.png",
-                    "Data_Sources": []
-                  }
-                ],
+                "Screenshots": [],
                 "Tactic": {
                   "Tactic_Id": "TA0002",
                   "Tactic_Name": "Execution"
@@ -5270,11 +5343,24 @@
               },
               {
                 "Substep": "4.A.3",
-                "Protection_Type": "None",
+                "Protection_Type": "Blocked",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [],
+                "Screenshots": [
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_4.A.3_2.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_4.A.3_3.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_4.A.3_4.png",
+                    "Data_Sources": []
+                  }
+                ],
                 "Tactic": {
                   "Tactic_Id": "TA0011",
                   "Tactic_Name": "Command and Control"
@@ -5292,7 +5378,7 @@
               },
               {
                 "Substep": "4.A.4",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5314,7 +5400,7 @@
               },
               {
                 "Substep": "4.A.5",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5336,7 +5422,7 @@
               },
               {
                 "Substep": "5.A.1",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5358,7 +5444,7 @@
               },
               {
                 "Substep": "5.A.2",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5380,7 +5466,7 @@
               },
               {
                 "Substep": "5.A.3",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5402,7 +5488,7 @@
               },
               {
                 "Substep": "5.A.4",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5424,7 +5510,7 @@
               },
               {
                 "Substep": "5.A.5",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5446,7 +5532,7 @@
               },
               {
                 "Substep": "5.A.6",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5468,7 +5554,7 @@
               },
               {
                 "Substep": "5.A.7",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5490,7 +5576,7 @@
               },
               {
                 "Substep": "5.A.8",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5512,7 +5598,7 @@
               },
               {
                 "Substep": "5.A.9",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5534,20 +5620,11 @@
               },
               {
                 "Substep": "6.A.1",
-                "Protection_Type": "Blocked",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [
-                  {
-                    "Name": "WizardSpider-Sandworm_SY_6.A.1_1.png",
-                    "Data_Sources": []
-                  },
-                  {
-                    "Name": "WizardSpider-Sandworm_SY_6.A.1_2.png",
-                    "Data_Sources": []
-                  }
-                ],
+                "Screenshots": [],
                 "Tactic": {
                   "Tactic_Id": "TA0011",
                   "Tactic_Name": "Command and Control"
@@ -5649,7 +5726,11 @@
                 "Footnotes": [],
                 "Screenshots": [
                   {
-                    "Name": "WizardSpider-Sandworm_SY_7.A.3_1.png",
+                    "Name": "WizardSpider-Sandworm_PA_7.A.3_2.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_7.A.3_3.png",
                     "Data_Sources": []
                   }
                 ],
@@ -5722,11 +5803,20 @@
             "Substeps": [
               {
                 "Substep": "8.A.1",
-                "Protection_Type": "None",
+                "Protection_Type": "Blocked",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [],
+                "Screenshots": [
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_8.A.1_1.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_8.A.1_2.png",
+                    "Data_Sources": []
+                  }
+                ],
                 "Tactic": {
                   "Tactic_Id": "TA0006",
                   "Tactic_Name": "Credential Access"
@@ -5744,7 +5834,7 @@
               },
               {
                 "Substep": "8.A.2",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5774,11 +5864,24 @@
             "Substeps": [
               {
                 "Substep": "9.A.1",
-                "Protection_Type": "None",
+                "Protection_Type": "Blocked",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [],
+                "Screenshots": [
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_9.A.1_2.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_9.A.1_3.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_9.A.1_4.png",
+                    "Data_Sources": []
+                  }
+                ],
                 "Tactic": {
                   "Tactic_Id": "TA0011",
                   "Tactic_Name": "Command and Control"
@@ -5796,7 +5899,7 @@
               },
               {
                 "Substep": "9.A.2",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5818,7 +5921,7 @@
               },
               {
                 "Substep": "9.A.3",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5840,7 +5943,7 @@
               },
               {
                 "Substep": "9.A.4",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -5862,12 +5965,10 @@
               },
               {
                 "Substep": "9.A.5",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
-                "Footnotes": [
-                  "During execution of the Evaluation, no relevant system backup files were present/enabled in the environment though the CMD commands to delete them was executed. The detection method(s) exhibited are subsequently scoped."
-                ],
+                "Footnotes": [],
                 "Screenshots": [],
                 "Tactic": {
                   "Tactic_Id": "TA0040",
@@ -5900,11 +6001,15 @@
                 "Footnotes": [],
                 "Screenshots": [
                   {
-                    "Name": "WizardSpider-Sandworm_SY_10.A.1_1.png",
+                    "Name": "WizardSpider-Sandworm_PA_10.A.1_2.png",
                     "Data_Sources": []
                   },
                   {
-                    "Name": "WizardSpider-Sandworm_SY_10.A.1_2.png",
+                    "Name": "WizardSpider-Sandworm_PA_10.A.1_3.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_10.A.1_4.png",
                     "Data_Sources": []
                   }
                 ],
@@ -6141,11 +6246,24 @@
               },
               {
                 "Substep": "11.A.4",
-                "Protection_Type": "None",
+                "Protection_Type": "Blocked",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [],
+                "Screenshots": [
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_11.A.4_1.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_11.A.4_2.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_11.A.4_3.png",
+                    "Data_Sources": []
+                  }
+                ],
                 "Tactic": {
                   "Tactic_Id": "TA0003",
                   "Tactic_Name": "Persistence"
@@ -6165,7 +6283,7 @@
               },
               {
                 "Substep": "12.A.1",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6189,7 +6307,7 @@
               },
               {
                 "Substep": "12.A.2",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6213,7 +6331,7 @@
               },
               {
                 "Substep": "12.A.3",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6237,7 +6355,7 @@
               },
               {
                 "Substep": "12.A.4",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6261,7 +6379,7 @@
               },
               {
                 "Substep": "12.A.5",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6285,16 +6403,11 @@
               },
               {
                 "Substep": "13.A.1",
-                "Protection_Type": "Blocked",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [
-                  {
-                    "Name": "WizardSpider-Sandworm_SY_13.A.1_1.png",
-                    "Data_Sources": []
-                  }
-                ],
+                "Screenshots": [],
                 "Tactic": {
                   "Tactic_Id": "TA0011",
                   "Tactic_Name": "Command and Control"
@@ -6586,11 +6699,16 @@
               },
               {
                 "Substep": "15.A.3",
-                "Protection_Type": "None",
+                "Protection_Type": "Blocked",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [],
+                "Screenshots": [
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_15.A.3_2.png",
+                    "Data_Sources": []
+                  }
+                ],
                 "Tactic": {
                   "Tactic_Id": "TA0011",
                   "Tactic_Name": "Command and Control"
@@ -6608,7 +6726,7 @@
               },
               {
                 "Substep": "15.A.4",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6630,7 +6748,7 @@
               },
               {
                 "Substep": "15.A.5",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6652,7 +6770,7 @@
               },
               {
                 "Substep": "15.A.7",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6674,7 +6792,7 @@
               },
               {
                 "Substep": "15.A.6",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -6696,20 +6814,11 @@
               },
               {
                 "Substep": "15.A.8",
-                "Protection_Type": "Blocked",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [
-                  {
-                    "Name": "WizardSpider-Sandworm_SY_15.A.8_1.png",
-                    "Data_Sources": []
-                  },
-                  {
-                    "Name": "WizardSpider-Sandworm_SY_15.A.8_2.png",
-                    "Data_Sources": []
-                  }
-                ],
+                "Screenshots": [],
                 "Tactic": {
                   "Tactic_Id": "TA0005",
                   "Tactic_Name": "Defense Evasion"
@@ -7137,11 +7246,20 @@
               },
               {
                 "Substep": "18.A.4",
-                "Protection_Type": "None",
+                "Protection_Type": "Blocked",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
-                "Screenshots": [],
+                "Screenshots": [
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_18.A.4_1.png",
+                    "Data_Sources": []
+                  },
+                  {
+                    "Name": "WizardSpider-Sandworm_PA_18.A.4_2.png",
+                    "Data_Sources": []
+                  }
+                ],
                 "Tactic": {
                   "Tactic_Id": "TA0011",
                   "Tactic_Name": "Command and Control"
@@ -7159,7 +7277,7 @@
               },
               {
                 "Substep": "19.A.1",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7181,7 +7299,7 @@
               },
               {
                 "Substep": "19.A.2",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7203,7 +7321,7 @@
               },
               {
                 "Substep": "19.A.3",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7225,7 +7343,7 @@
               },
               {
                 "Substep": "19.A.4",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7247,7 +7365,7 @@
               },
               {
                 "Substep": "19.A.5",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7269,7 +7387,7 @@
               },
               {
                 "Substep": "19.A.6",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7291,7 +7409,7 @@
               },
               {
                 "Substep": "19.A.7",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7313,7 +7431,7 @@
               },
               {
                 "Substep": "19.A.8",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7335,7 +7453,7 @@
               },
               {
                 "Substep": "19.A.9",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7357,7 +7475,7 @@
               },
               {
                 "Substep": "19.A.10",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
@@ -7379,7 +7497,7 @@
               },
               {
                 "Substep": "19.A.11",
-                "Protection_Type": "None",
+                "Protection_Type": "N/A",
                 "Modifiers": [],
                 "Protection_Note": null,
                 "Footnotes": [],
