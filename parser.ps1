@@ -1,29 +1,13 @@
 [CmdletBinding()]
 param(
-#    [Parameter(Mandatory=$false)]  [ValidateNotNullOrEmpty()]
-#    $destination = "$env:USERPROFILE\Downloads",
-#    [Parameter(Mandatory=$false)]  [ValidateNotNullOrEmpty()]
-#    $source,
-#    [Parameter(Mandatory=$false)]  [ValidateNotNullOrEmpty()]
-#    [ValidateRange(1,50)]
-#    [int]$count,
     [Parameter(Mandatory=$false)]
     $platform = @('windows', 'linux'),
-#    [Parameter(Mandatory=$false)]
-#    $exclude = @('malware', 'pup', 'ransomware'),
- #   [Parameter(Mandatory=$false)]
-#    [ValidateRange(1,50)]
-#    [int]$min,
-#    [Parameter(Mandatory=$false)]
-#    [ValidateRange(1,50)]
-#    [int]$max,
-#    [switch]$run,
-    [switch]$changes,
+    [switch]$includechanges,
     [switch]$protection
 )
 
-$version = "0.2"
-$detection_results_xlsx = './2021_Results_Detection.xlsx'
+$version = "0.3"
+$detection_results_xlsx = './2021_Detection_Detailed_Results_By_Vendor.xlsx'
 $detection_results_summary_xlsx = './2021_Detection_Summary.xlsx'
 $protection_results_xlsx = './2021_Results_Protection.xlsx'
 $files = Get-ChildItem -Filter "./JSON/*.json"
@@ -58,8 +42,12 @@ foreach ($file in $files) {
     $analytic_discount = 0
     $visibility_discount = 0
     $technique_discount = 0
-    $config_changes1 = 0
-    $config_changes2 = 0
+    $delayed = 0
+    $detection_logic_changes = 0
+    $ux_changes = 0
+    $config_changes_general = 0
+    $data_sources_changes = 0
+    $config_changes_total = 0
     $json = Get-Content $file.FullName -Raw | ConvertFrom-Json
     $vendor_name = $file.name.split("_")[0]
     Write-Host " "
@@ -117,7 +105,7 @@ foreach ($file in $files) {
                     $visibility_steps +=1
                 }
 
-                if ($changes) {
+                if ($includechanges) {
                     # Check for configuration changes
                     if ($substep.Detections.Modifiers.count -eq 1) {
                         switch ($substep.Detections.Modifiers) {
@@ -247,7 +235,7 @@ foreach ($file in $files) {
                 $visibility_steps +=1
             }
 
-            if ($changes) {
+            if ($includechanges) {
                 # Process config changes
                 # What was the original detection without modifiers?
                 write-host " "
@@ -266,12 +254,12 @@ foreach ($file in $files) {
                     } 
                     "General" {
                         write-host " "
-                        write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)"
+                        write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)" -ForegroundColor Yellow
                         $technique_discount +=1
                     } 
                     "Tactic" {
                         write-host " "
-                        write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)"
+                        write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)" -ForegroundColor Yellow
                         $technique_discount +=1
                     }
                     "Telemetry" {
@@ -283,6 +271,13 @@ foreach ($file in $files) {
                         write-host " "
                         write-host "Discounting Visibility" -ForegroundColor Yellow 
                         $visibility_discount +=1 
+                        if ($substep.Detections.Detection_Type -contains "Technique" -or
+                            $substep.Detections.Detection_Type -contains "General" -or
+                            $substep.Detections.Detection_Type -contains "Tactic" ) {
+                            write-host " "
+                            write-host "Discounting also Analytic because the original detection was None" -ForegroundColor Yellow
+                            $analytic_discount +=1 
+                        }
                     }
                     "N/A" {
                         write-host " "
@@ -335,21 +330,32 @@ foreach ($file in $files) {
     if ($json.adversaries.participant_capabilities -contains "Linux Capability") { $Linux = "Yes" } else { $Linux = "No" }
 
     $total_substeps_summary = $summary.Total_Substeps
-    $json.adversaries.detections_by_step.scenario_1.steps.substeps | foreach-object {
-        if ($_.detections.modifiers -gt 0) {
-            $config_changes1 +=1
+
+    foreach ($scenario in @("Scenario_1","Scenario_2")) {
+        $json.adversaries.detections_by_step.$scenario.steps.substeps | foreach-object {
+            if ($_.detections.Detection_Type -contains "Technique") {
+                $technique_steps +=1
+            }
+            if ($_.detections.modifiers -gt 0) {
+                $config_changes_total +=1
+            }
+            if ($_.detections.modifiers -contains "Delayed") {
+                $delayed +=1
+            }
+            if ($_.detections.modifiers -contains "Configuration Change (Detection Logic)") {
+                $detection_logic_changes +=1
+            }
+            if ($_.detections.modifiers -contains "Configuration Change (UX)") {
+                $ux_changes +=1
+            }
+            if ($_.detections.modifiers -contains "Configuration Change (Data Sources)") {
+                $data_sources_changes +=1
+            }
+            if ($_.detections.modifiers -contains "Configuration Change") {
+                $config_changes_general +=1
+            }
         }
     }
-    $json.adversaries.detections_by_step.scenario_2.steps.substeps | foreach-object {
-        if ($_.detections.modifiers -gt 0) {
-            $config_changes1 +=1
-        }
-    }
-    #$config_changes_total = $config_changes1 + $config_changes2
-    #$detection_logic_changed = ($json.adversaries.detections_by_step.scenario_1.steps.substeps.detections.modifiers | where-object {$_ -eq "Configuration Change (Detection Logic)" }).count
-    #$config_changes_ux = ($json.adversaries.detections_by_step.scenario_1.steps.substeps.detections.modifiers | where-object {$_ -eq "Configuration Change (UX)" }).count
-    #$delayed = ($json.adversaries.detections_by_step.scenario_1.steps.substeps.detections.modifiers | where-object {$_ -eq "delayed"}).count
-    #$data_sources_changed = ($json.adversaries.detections_by_step.scenario_1.steps.substeps.detections.modifiers | where-object {$_ -eq "Configuration Change (Data Sources)"}).count
 
     if ($os_list.count -eq 2 -and $Linux -eq "yes") {
         $total_substeps = 109
@@ -365,25 +371,31 @@ foreach ($file in $files) {
     }
 
     # Calculate final scores 
-    if ($changes) {
+    if ($includechanges) {
         $Analytic_Score = ($analytic_steps - $analytic_discount) / $total_substeps
         $Visibility_Score = ($visibility_steps - $visibility_discount) / $total_substeps
+        $Technique_Score = ($technique_steps - $technique_discount) / $total_substeps
     } else {
         $Analytic_Score = $analytic_steps / $total_substeps
         $Visibility_Score = $visibility_steps / $total_substeps
+        $Technique_Score = $technique_steps / $total_substeps
     }
 
-    if ($changes) {
+    if ($includechanges) {
         $result = [PSCustomObject]@{
             Vendor = $vendor_name
-            Analytic_Score = $Analytic_Score
+            Analytic_Coverage_without_Config_Changes = $Analytic_Score
             Analytic_Steps = $analytic_steps
-            Analytic_Deducted = $analytic_discount
-            Original_Analytic_Score = $analytic_steps / $total_substeps
-            Visibility_Score = $Visibility_Score
+            Analytic_Steps_with_Config_Changes = $analytic_discount
+            Analytic_Coverage_Score_with_Config_Changese = $analytic_steps / $total_substeps
+            Visibility_without_Config_Changes = $Visibility_Score
             Visibility_Steps = $visibility_steps
-            Visibility_Deducted = $visibility_discount
-            Original_Visibility_Score = $visibility_steps / $total_substeps
+            Visibility_Steps_with_Config_Changes = $visibility_discount
+            Visibility_Score_with_Config_Changes = $visibility_steps / $total_substeps
+            Technique_Coverage_without_Config_Changes = $Technique_Score
+            Technique_Steps = $technique_steps
+            Technique_Steps_with_Config_Changes = $technique_discount
+            Techniques_Coverage_Score_with_Config_Changes  = $technique_steps / $total_substeps
             #Analytic_Coverage_Percentage = $summary.Analytic_Coverage.Split("/")[0] / $total_substeps_summary
             #Visibility_Percentage = $summary.Visibility.Split("/")[0] / $total_substeps_summary
             #Analytic_Coverage = $summary.Analytic_Coverage
@@ -394,17 +406,12 @@ foreach ($file in $files) {
             #Total_Steps_Summary = $total_substeps_summary
             Total_Steps = $total_substeps
             Linux = $Linux
-
-            #Analytic_Without_CCs = $summary.Analytic_Coverage.Split("/")[0] - $analytic_discount
-            #Visibility_Without_CCs = $summary.Visibility.Split("/")[0] - $visibility_discount
-            #New_Analytic = ($summary.Analytic_Coverage.Split("/")[0] - $analytic_discount) / $total_substeps_summary
-            #New_Visibility = ($summary.Visibility.Split("/")[0] - $visibility_discount) / $total_substeps_summary
-            #Techniques_To_Deduct  = $technique_discount
-            #Config_Changes_Total = $config_changes_total
-            #Detection_Logic_Changes = $detection_logic_changed
-            #Data_Sources_Changes = $data_sources_changed
-            #UX_Changes = $config_changes_ux
-            #Delayed_Detections = $delayed
+            Config_Changes_Delayed_Detections = $delayed
+            Config_Changes_Data_Sources = $data_sources_changes
+            Config_Changes_Detection_Logic = $detection_logic_changes
+            Config_Changes_General = $config_changes_general
+            Config_Changes_UX = $ux_changes
+            Config_Changes_Total = $config_changes_total
         }
     }
     else {
@@ -426,7 +433,7 @@ foreach ($file in $files) {
     $summary_results += $result
     $wkst_detection | Export-Excel -Path $detection_results_xlsx -AutoSize -TableName $vendor_name -WorksheetName $vendor_name -FreezeTopRowFirstColumn
 
-    if ($changes) {
+    if ($includechanges) {
         Write-host " "
         Write-host "----------------------------------------" -ForegroundColor Green
         Write-Host "$vendor_name config changes summary" -ForegroundColor Green
@@ -438,7 +445,7 @@ foreach ($file in $files) {
             Vendor = $vendor_name
             Analytic_To_Deduct = $analytic_discount
             Visibility_To_Deduct = $visibility_discount
-            #Technique_To_Deduct = $technique_discount
+            Technique_To_Deduct = $technique_discount
         }
         $conf_changes_summary += $conf_changes_vendor
     }
@@ -494,7 +501,7 @@ if ($protection) {
     $summary_results_protection | Export-Excel -Path $protection_results_xlsx -AutoSize -TableName Summary -WorksheetName "Summary"
 }
 
-Write-Host "---------------------------------DONE---------------------------------" -ForegroundColor Green
+Write-Host "----------------------------------------------DONE----------------------------------------------" -ForegroundColor Green
 if (Test-Path -path $detection_results_summary_xlsx) { write-host "Summary detection test results saved to $detection_results_summary_xlsx" -ForegroundColor Cyan } 
 else { write-host "Failed to export summary detection test results to $detection_results_summary_xlsx" }
 if (Test-Path -path $detection_results_xlsx) { write-host "Detaled detection test results saved to $detection_results_xlsx" -ForegroundColor Cyan } 
@@ -504,7 +511,7 @@ if ($protection) {
     if (Test-Path -path $protection_results_xlsx) { write-host "Protection test results saved to $protection_results_xlsx" -ForegroundColor Cyan }
     else { write-host "Failed to export the protection test results to $detection_results_xlsx" }
 }
-Write-Host "----------------------------------------------------------------------" -ForegroundColor Green
+Write-Host "------------------------------------------------------------------------------------------------" -ForegroundColor Green
 
 
 #$summary_results_protection | Export-Csv 2021_results_detection.csv -NoTypeInformation
