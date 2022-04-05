@@ -207,87 +207,105 @@ foreach ($file in $files) {
             }
 
             if ($substep.Detections.count -gt 1) {
-                # Check for highest detection regardless of a config change
+                # Exclude steps with all None and N/A detections
                 if ($substep.Detections.Detection_Type -contains "Technique" -Or
                     $substep.Detections.Detection_Type -contains "General" -Or
-                    $substep.Detections.Detection_Type -contains "Tactic") {
+                    $substep.Detections.Detection_Type -contains "Tactic" -Or
+                    $substep.Detections.Detection_Type -contains "Telemetry") {
+                        # Check for highest detection regardless of a config change
+                    if ($substep.Detections.Detection_Type -contains "Technique" -Or
+                        $substep.Detections.Detection_Type -contains "General" -Or
+                        $substep.Detections.Detection_Type -contains "Tactic") {
+                            $visibility_steps +=1
+                            $analytic_steps +=1
+                        }
+                    elseif ($substep.Detections.Detection_Type -contains "Telemetry"){
                         $visibility_steps +=1
-                        $analytic_steps +=1
                     }
-                elseif ($substep.Detections.Detection_Type -contains "Telemetry"){
-                    $visibility_steps +=1
-                }
 
-                if ($includechanges) {
-                    # Process config changes
-                    # What was the original detection without modifiers?
-                    write-host " "
-                    write-host " "
-                    write-host "$vendor_name - Substep $($substep.Substep). Found $($substep.Detections.count) detections:" -ForegroundColor Cyan
-                    Write-output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
-        
-                    # If at least one detection has a config change
-                    if ($substep.Detections.modifiers.count -ne 0) {
-                        $original_detection = ($substep.Detections | where-object {$_.modifiers.count -eq 0}).Detection_Type
-                        if ($null -ne $original_detection) {
-                            write-host "The original detection was: $original_detection"
-                        }
-                        switch ($original_detection) {
-                            "Technique" {
-                                write-host " "
-                                write-host "Verdict: No change"
-                            } 
-                            "General" {
-                                write-host " "
-                                write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)" -ForegroundColor Yellow
-                                $technique_discount +=1
-                            } 
-                            "Tactic" {
-                                write-host " "
-                                write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)" -ForegroundColor Yellow
-                                $technique_discount +=1
+                    if ($includechanges) {
+                        # Process config changes
+                        # What was the original detection without modifiers?
+                        write-host " "
+                        write-host " "
+                        write-host "$vendor_name - Substep $($substep.Substep). Found $($substep.Detections.count) detections:" -ForegroundColor Cyan
+                        Write-output $substep.Detections | Select-Object Detection_Type, Modifiers | ft
+            
+                        # If at least one detection has a config change
+                        if ($substep.Detections.modifiers.count -ne 0) {
+                            $original_detection = ($substep.Detections | where-object {$_.modifiers.count -eq 0}).Detection_Type
+                            if ($null -ne $original_detection) {
+                                write-host "The original detection was: $original_detection"
                             }
-                            "Telemetry" {
-                                write-host " "
-                                write-host "Discounting Analytic" -ForegroundColor Yellow
-                                $analytic_discount +=1 
-                            }
-                            "None" { 
-                                write-host " "
-                                write-host "Discounting Visibility" -ForegroundColor Yellow 
-                                $visibility_discount +=1 
-                                if ($substep.Detections.Detection_Type -contains "Technique" -or
-                                    $substep.Detections.Detection_Type -contains "General" -or
-                                    $substep.Detections.Detection_Type -contains "Tactic" ) {
+                            switch ($original_detection) {
+                                "Technique" {
                                     write-host " "
-                                    write-host "Discounting also Analytic because the original detection was None" -ForegroundColor Yellow
-                                    $analytic_discount +=1 
-                                }
-                            }
-                            "N/A" {
-                                write-host " "
-                                write-host "Detection: N/A" 
-                            }
-                            Default {
-                                write-host " "
-                                write-host "All detections have configuration changes in this substep."
-                                if ($substep.Detections.Detection_Type -contains "Technique" -or
-                                    $substep.Detections.Detection_Type -contains "General" -or
-                                    $substep.Detections.Detection_Type -contains "Tactic" ) {
+                                    write-host "Verdict: No change"
+                                } 
+                                "General" {
                                     write-host " "
-                                    write-host "Discounting Analytic because there is no Analytic detection found without a config change." -ForegroundColor Yellow
-                                    $analytic_discount +=1 
+                                    write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)" -ForegroundColor Yellow
+                                    $technique_discount +=1
+                                } 
+                                "Tactic" {
+                                    write-host " "
+                                    write-host "Discounting Technique Coverage (no changes to Analytic or Visibility score)" -ForegroundColor Yellow
+                                    $technique_discount +=1
                                 }
-                                if ($substep.Detections.Detection_Type -contains "Telemetry") {
-                                    write-host "Discounting Visibility because there is no Telemetry detection found without a config change." -ForegroundColor Yellow
+                                "Telemetry" {
+                                    # Address this
+                                    #trendmicro - Substep 1.A.10. Found 2 detections:
+                                    #Detection_Type Modifiers
+                                    #-------------- ---------
+                                    #None           {Configuration Change (Detection Logic)}
+                                    #Telemetry      {}
+
+                                    $other_detections = ($substep.Detections | where-object {$_.modifiers.count -ne 0}).Detection_Type
+                                    if ($other_detections -contains "Technique" -Or
+                                        $substep.Detections.Detection_Type -contains "General" -Or
+                                        $substep.Detections.Detection_Type -contains "Tactic") {
+                                        write-host " "
+                                        write-host "Discounting Analytic" -ForegroundColor Yellow
+                                        $analytic_discount +=1
+                                    } 
+                                }
+                                "None" { 
+                                    write-host " "
+                                    write-host "Discounting Visibility" -ForegroundColor Yellow 
                                     $visibility_discount +=1 
+                                    if ($substep.Detections.Detection_Type -contains "Technique" -or
+                                        $substep.Detections.Detection_Type -contains "General" -or
+                                        $substep.Detections.Detection_Type -contains "Tactic" ) {
+                                        write-host " "
+                                        write-host "Discounting also Analytic because the original detection was None" -ForegroundColor Yellow
+                                        $analytic_discount +=1 
+                                    }
+                                }
+                                "N/A" {
+                                    write-host " "
+                                    write-host "Detection: N/A" 
+                                }
+                                Default {
+                                    write-host " "
+                                    write-host "All detections have configuration changes in this substep."
+                                    if ($substep.Detections.Detection_Type -contains "Technique" -or
+                                        $substep.Detections.Detection_Type -contains "General" -or
+                                        $substep.Detections.Detection_Type -contains "Tactic" ) {
+                                        write-host " "
+                                        write-host "Discounting Analytic because there is no Analytic detection found without a config change." -ForegroundColor Yellow
+                                        $analytic_discount +=1 
+                                    }
+                                    if ($substep.Detections.Detection_Type -contains "Telemetry") {
+                                        write-host "Discounting Visibility because there is no Telemetry detection found without a config change." -ForegroundColor Yellow
+                                        $visibility_discount +=1 
+                                    }
                                 }
                             }
                         }
-                    }
 
-                    if ($substep.Detections.count -gt 3) {
-                        write-host "ERROR: Too many detections. Cannot process."
+                        if ($substep.Detections.count -gt 3) {
+                            write-host "ERROR: Too many detections. Cannot process."
+                        }
                     }
                 }
             }
